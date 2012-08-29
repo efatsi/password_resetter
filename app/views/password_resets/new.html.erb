@@ -1,0 +1,9 @@
+Please enter your email address OR username to reset your password.<br /><br />
+
+<%= simple_form_for @password_reset do |f| %>
+  <%= f.full_error :user %>
+  <div class="field">
+    <%= f.input :identifier, :label => "Enter your Email or Username" %>
+  </div>
+  <div class="actions"><%= submit_tag "Reset Password" %></div>
+<% end %>
