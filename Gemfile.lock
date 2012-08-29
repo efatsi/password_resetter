@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     password_resetter (0.0.1)
-      rails (~> 3.2.8)
+      rails
 
 GEM
   remote: http://rubygems.org/
