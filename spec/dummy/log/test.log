@@ -1111,3 +1111,207 @@ Binary data inserted for `string` type on column `password_digest`
   [1m[35m (0.3ms)[0m  UPDATE "users" SET "password_digest" = '$2a$10$JUUH8V.VaHxXh/9VnVD6ueIrDbT/cnVbNMw6ycsunnNqfEqR5Q12G', "password_reset_token" = NULL, "updated_at" = '2012-08-29 17:19:52.969382' WHERE "users"."id" = 1
   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
   [1m[35m (1.7ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE (username = 'eli' OR email = 'eli') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username = 'eli' OR email = 'eli') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."auth_token" = '-_5HChEhh8F5AJPrzEzvrA' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (4.1ms)[0m  INSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["auth_token", "-_5HChEhh8F5AJPrzEzvrA"], ["created_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["email", nil], ["password_digest", "$2a$10$B99UeuZPmEcCAuc0MbrnxukwRwO2t65frUFuf4QryWq6YwOXSeTyq"], ["password_reset_sent_at", nil], ["password_reset_token", nil], ["updated_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["username", "eli"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE (username = 'eli' OR email = 'eli') LIMIT 1
+  [1m[36m (1.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'KZqKDAfVRKeuofvE4H5zAg' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["auth_token", "KZqKDAfVRKeuofvE4H5zAg"], ["created_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["email", nil], ["password_digest", "$2a$10$CY3mwdpwmdxfE1uPDrxMIOW5Xu.1ECzgYwUS3kHRaI4BSjco0eDgO"], ["password_reset_sent_at", nil], ["password_reset_token", nil], ["updated_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["username", "eli"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username = 'eli' OR email = 'eli') LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'kEBag6pXe6OrnfaFbuM2HQ' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["auth_token", "kEBag6pXe6OrnfaFbuM2HQ"], ["created_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$ROoSCL7UWPpmkYbNMZ7Kv.I77a/iIkwXDKkkmQtl4KMohzuxtltA."], ["password_reset_sent_at", nil], ["password_reset_token", nil], ["updated_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["username", "user_1"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE (username = 'eli@viget.com' OR email = 'eli@viget.com') LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'wrxzIMyVFHAvLcfFOKcXLQ' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["auth_token", "wrxzIMyVFHAvLcfFOKcXLQ"], ["created_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$DNgZW5slpW7FP7cjJkPv4uam3rF35Rolob.q0u8C2vqEt3.935yUG"], ["password_reset_sent_at", nil], ["password_reset_token", nil], ["updated_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["username", "eli"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE (username = 'eli' OR email = 'eli') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."password_reset_token" = 'lvzSIPlPhPMAzh9FY4AL_Q' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mUPDATE "users" SET "password_reset_token" = 'lvzSIPlPhPMAzh9FY4AL_Q', "password_reset_sent_at" = '2012-08-29 17:22:21.486417', "updated_at" = '2012-08-29 17:22:21.486769' WHERE "users"."id" = 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered /Users/efatsi/Desktop/password_resetter/app/views/password_reset_mailer/password_reset.text.erb (1.9ms)
+
+Sent mail to eli@viget.com (35ms)
+Date: Wed, 29 Aug 2012 11:22:21 -0600
+From: haxxor_news@example.com
+To: eli@viget.com
+Message-ID: <503e4fcd8595a_d7173ff921435ad044293@Eliass-MacBook-Pro.local.mail>
+Subject: Password Reset
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset your password, click the URL below.
+
+http://localhost:3000/password_resets/lvzSIPlPhPMAzh9FY4AL_Q/edit
+
+If you did not request your password to be reset, just ignore this email and your password will continue to stay the same.
+
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'reu3Wgbtq1-jdkLt_aOxDQ' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["auth_token", "reu3Wgbtq1-jdkLt_aOxDQ"], ["created_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$GvosQu0zg4n9yV.w4qPFf.UuL3gVd5C1RroA.pWVzk71SpcBg2YTC"], ["password_reset_sent_at", nil], ["password_reset_token", nil], ["updated_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["username", "eli"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE (username = 'eli' OR email = 'eli') LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."password_reset_token" = 'FT6nUdpOvZ8O3AkFs-PgbQ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mUPDATE "users" SET "password_reset_token" = 'FT6nUdpOvZ8O3AkFs-PgbQ', "password_reset_sent_at" = '2012-08-29 17:22:21.645375', "updated_at" = '2012-08-29 17:22:21.645591' WHERE "users"."id" = 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."auth_token" = '7I2jFts-rDNuReIZ1UgXlw' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["auth_token", "7I2jFts-rDNuReIZ1UgXlw"], ["created_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$tfSCdAJNUxV3wZi8hg2iXev8RXthVDS4R.RslQschOBWX64cppoCe"], ["password_reset_sent_at", nil], ["password_reset_token", nil], ["updated_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["username", "eli"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE (username = 'eli' OR email = 'eli') LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."password_reset_token" = '5f-Xll3dRsZq8zmPHfuzZQ' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  UPDATE "users" SET "password_reset_token" = '5f-Xll3dRsZq8zmPHfuzZQ', "password_reset_sent_at" = '2012-08-29 17:22:21.721006', "updated_at" = '2012-08-29 17:22:21.721222' WHERE "users"."id" = 1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'zmXBf4eRgjVkvJE0_4Xz2w' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["auth_token", "zmXBf4eRgjVkvJE0_4Xz2w"], ["created_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$fi2GAu92OlZkE.iSG00TuuHU/8LFuMJtR9fkH5mBBSPjVUk9tVpqm"], ["password_reset_sent_at", nil], ["password_reset_token", nil], ["updated_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["username", "eli"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE (username = 'eli' OR email = 'eli') LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."password_reset_token" = '2OxdHtLp_PZysJKLDod5CQ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mUPDATE "users" SET "password_reset_token" = '2OxdHtLp_PZysJKLDod5CQ', "password_reset_sent_at" = '2012-08-29 17:22:21.792867', "updated_at" = '2012-08-29 17:22:21.793066' WHERE "users"."id" = 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered /Users/efatsi/Desktop/password_resetter/app/views/password_reset_mailer/password_reset.text.erb (0.3ms)
+
+Sent mail to eli@viget.com (3ms)
+Date: Wed, 29 Aug 2012 11:22:21 -0600
+From: haxxor_news@example.com
+To: eli@viget.com
+Message-ID: <503e4fcdc2ff6_d7173ff921435ad04439b@Eliass-MacBook-Pro.local.mail>
+Subject: Password Reset
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+To reset your password, click the URL below.
+
+http://localhost:3000/password_resets/2OxdHtLp_PZysJKLDod5CQ/edit
+
+If you did not request your password to be reset, just ignore this email and your password will continue to stay the same.
+
+
+
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'I35UhnDkV2vS_CbLro33yQ' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["auth_token", "I35UhnDkV2vS_CbLro33yQ"], ["created_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$i1ZckubfdBroD5xsf2CXuenCT6EDJ1Jmdk4RVRVt05naJ0/rcMW3a"], ["password_reset_sent_at", nil], ["password_reset_token", "fake_reset_token"], ["updated_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["username", "eli"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'p488AJmrtQvM4cI77vPNjg' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["auth_token", "p488AJmrtQvM4cI77vPNjg"], ["created_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$e60HA4Q.Lz13VvP1PKpro.wa/Ffu/4JoMB60dlnjjKQQGRYLKkd7."], ["password_reset_sent_at", nil], ["password_reset_token", "fake_reset_token"], ["updated_at", Wed, 29 Aug 2012 17:22:21 UTC +00:00], ["username", "eli"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mUPDATE "users" SET "password_reset_sent_at" = '2012-08-29 14:22:21.941171', "updated_at" = '2012-08-29 17:22:21.941502' WHERE "users"."id" = 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'h07cv_8SqYrW72LceVCaHA' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["auth_token", "h07cv_8SqYrW72LceVCaHA"], ["created_at", Wed, 29 Aug 2012 17:22:22 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$/O3gKUQo2Cfj78wbsPftfukYOUGJ7K/yXlgOByOebt.Ao0fMHWL/e"], ["password_reset_sent_at", nil], ["password_reset_token", "fake_reset_token"], ["updated_at", Wed, 29 Aug 2012 17:22:22 UTC +00:00], ["username", "eli"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  UPDATE "users" SET "password_reset_sent_at" = '2012-08-29 16:22:22.011619', "updated_at" = '2012-08-29 17:22:22.011931' WHERE "users"."id" = 1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'CvuLazCls1lSWt9rcEUUvw' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["auth_token", "CvuLazCls1lSWt9rcEUUvw"], ["created_at", Wed, 29 Aug 2012 17:22:22 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$OFU/T0l60ZwUqYlKIcrOY.H.b7wfjZcFo/QTsVh5Kezy0Ktc21cyy"], ["password_reset_sent_at", nil], ["password_reset_token", "fake_reset_token"], ["updated_at", Wed, 29 Aug 2012 17:22:22 UTC +00:00], ["username", "eli"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'LeTgGKFgqDSF6o4yxs25zg' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["auth_token", "LeTgGKFgqDSF6o4yxs25zg"], ["created_at", Wed, 29 Aug 2012 17:22:22 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$KVOSYNnWWxjw7soo50xuP.SfORRwlgL7f93qv7xmYMgp5cURlEpPS"], ["password_reset_sent_at", nil], ["password_reset_token", "fake_reset_token"], ["updated_at", Wed, 29 Aug 2012 17:22:22 UTC +00:00], ["username", "eli"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mUPDATE "users" SET "password_digest" = '$2a$10$z5uACYSo5dAuJ2ef/Xcd/enHyNdmEB.NjhcSxBZDtFTpUxdzVBwAG', "password_reset_token" = NULL, "updated_at" = '2012-08-29 17:22:22.282771' WHERE "users"."id" = 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (1.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'XnBiW0X2ywf8YDrsLuMoeA' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["auth_token", "XnBiW0X2ywf8YDrsLuMoeA"], ["created_at", Wed, 29 Aug 2012 17:22:22 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$FaEeUUZ.xp53x0wdhgYbO.0Jljs1XbY8cFeGkf0ZKdlKMczCDfp92"], ["password_reset_sent_at", nil], ["password_reset_token", "fake_reset_token"], ["updated_at", Wed, 29 Aug 2012 17:22:22 UTC +00:00], ["username", "eli"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'y6wSRdrgPpy-BSX6rNJ13Q' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["auth_token", "y6wSRdrgPpy-BSX6rNJ13Q"], ["created_at", Wed, 29 Aug 2012 17:22:22 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$w6OXXNGmpeqNhG41XCwCcOE.LIe2WznRUU5VnXxO83xEEsQYPTaMu"], ["password_reset_sent_at", nil], ["password_reset_token", "fake_reset_token"], ["updated_at", Wed, 29 Aug 2012 17:22:22 UTC +00:00], ["username", "eli"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "password_digest" = '$2a$10$xL6uAPrEz8i2tYvQq2VhpOZJ3I2ZlfnTFu3Y4IYJzVIjPtsgbKIzS', "password_reset_token" = NULL, "updated_at" = '2012-08-29 17:22:22.556760' WHERE "users"."id" = 1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (1.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."auth_token" = 'ImwL07F7oa0dtpnyZC-yVw' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("auth_token", "created_at", "email", "password_digest", "password_reset_sent_at", "password_reset_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["auth_token", "ImwL07F7oa0dtpnyZC-yVw"], ["created_at", Wed, 29 Aug 2012 17:22:22 UTC +00:00], ["email", "eli@viget.com"], ["password_digest", "$2a$10$xhi5auVe8KEwf20weOSCLeYBITwaOISrLKhNsdNt9iPGLUHNa3kYS"], ["password_reset_sent_at", nil], ["password_reset_token", "fake_reset_token"], ["updated_at", Wed, 29 Aug 2012 17:22:22 UTC +00:00], ["username", "eli"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "password_digest" = '$2a$10$2FI6HWYq0Afn/wRZg3HjG.O/Bsv62VxKxyuF7aQ/PEG7FY1YurvUi', "password_reset_token" = NULL, "updated_at" = '2012-08-29 17:22:22.823695' WHERE "users"."id" = 1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.8ms)[0m  rollback transaction
