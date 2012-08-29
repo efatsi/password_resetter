@@ -1,9 +1,7 @@
 class PasswordReset < ActiveRecord::Base
-  include ActiveModel::Validations
-  include ActiveModel::Conversion
 
-  attr_accessor :existing_user, :user
-
+  belongs_to :user
+  
   validates_presence_of :identifier, :unless => :persisted? 
   validates_presence_of :password, :if => :persisted?
   validates_confirmation_of :password, :if => :password?
@@ -32,13 +30,6 @@ class PasswordReset < ActiveRecord::Base
     end
   end
 
-  # def id
-  #   existing_user.try(:password_reset_token)
-  # end
-
-  def expired?
-    existing_user.password_reset_sent_at < 2.hours.ago
-  end
 
   def persisted?
     id.present?
