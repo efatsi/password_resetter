@@ -17,6 +17,9 @@ ActiveRecord::Schema.define(:version => 20120829165609) do
     t.string   "identifier"
     t.string   "password"
     t.string   "password_confirmation"
+    t.string   "reset_token"
+    t.datetime "reset_sent_at"
+    t.integer  "user_id"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
   end
@@ -25,11 +28,8 @@ ActiveRecord::Schema.define(:version => 20120829165609) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "auth_token"
-    t.string   "password_reset_token"
-    t.datetime "password_reset_sent_at"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

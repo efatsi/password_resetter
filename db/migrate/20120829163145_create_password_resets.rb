@@ -6,6 +6,7 @@ class CreatePasswordResets < ActiveRecord::Migration
       t.string :password_confirmation
       t.string :reset_token
       t.datetime :reset_sent_at
+      t.integer :user_id
       
       t.timestamps
     end
