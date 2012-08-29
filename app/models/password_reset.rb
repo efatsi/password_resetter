@@ -2,7 +2,7 @@ class PasswordReset < ActiveRecord::Base
   include ActiveModel::Validations
   include ActiveModel::Conversion
 
-  attr_accessor :existing_user, :user, :identifier, :password, :password_confirmation
+  attr_accessor :existing_user, :user
 
   validates_presence_of :identifier, :unless => :persisted? 
   validates_presence_of :password, :if => :persisted?
@@ -12,19 +12,6 @@ class PasswordReset < ActiveRecord::Base
 
   def self.find(id)
     new(:existing_user => User.find_by_password_reset_token(id))
-  end
-
-  def initialize(attributes = {})
-    self.attributes = attributes
-  end
-
-  def save
-    if valid? 
-      user.send_password_reset
-      true
-    else
-      false
-    end
   end
 
   def update_attributes(attributes = {})
@@ -45,9 +32,9 @@ class PasswordReset < ActiveRecord::Base
     end
   end
 
-  def id
-    existing_user.try(:password_reset_token)
-  end
+  # def id
+  #   existing_user.try(:password_reset_token)
+  # end
 
   def expired?
     existing_user.password_reset_sent_at < 2.hours.ago
