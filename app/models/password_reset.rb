@@ -1,5 +1,4 @@
 class PasswordReset < ActiveRecord::Base
-  
   include ActiveModel::Validations
   include ActiveModel::Conversion
 
@@ -56,10 +55,6 @@ class PasswordReset < ActiveRecord::Base
 
   def persisted?
     id.present?
-  end
-
-  def hi
-    "Whatup Dawgg"
   end
 
   private

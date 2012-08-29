@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PasswordResetMailerTest < ActionMailer::TestCase
+class UserTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
