@@ -10,10 +10,10 @@ Gem::Specification.new do |s|
   s.authors     = ["Eli Fatsi"]
   s.email       = ["efatsi@comcast.net"]
   s.homepage    = "http://efatsi.github.com"
-  s.summary     = "This will work one day."
-  s.description = "And it will be sweet"
+  s.summary     = "Gem allowing Users to reset their password through email"
+  s.description = "Gem allowing Users to reset their password through email"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails"
