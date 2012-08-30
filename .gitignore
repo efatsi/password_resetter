@@ -1,4 +1,4 @@
-password_resetter-0.0.1.gem
+password_resetter-*.gem
 .bundle/
 log/*.log
 pkg/
