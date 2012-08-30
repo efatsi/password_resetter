@@ -9,14 +9,15 @@ Gem::Specification.new do |s|
   s.version     = PasswordResetter::VERSION
   s.authors     = ["Eli Fatsi"]
   s.email       = ["efatsi@comcast.net"]
-  s.homepage    = "http://efatsi.github.com"
-  s.summary     = "Gem allowing Users to reset their password through email"
-  s.description = "Gem allowing Users to reset their password through email"
+  s.homepage    = "https://github.com/efatsi/password_resetter"
+  s.summary     = "Allowing Users to reset their password through email"
+  s.description = "Allowing Users to reset their password through email"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails"
+  s.add_dependency "bcrypt-ruby"
   # s.add_dependency "jquery-rails"
 
   s.add_development_dependency 'sqlite3'
