@@ -7,7 +7,7 @@ require "password_resetter/version"
 Gem::Specification.new do |s|
   s.name        = "password_resetter"
   s.version     = PasswordResetter::VERSION
-  s.executables << 'execute_migrations'
+  s.executables = ["password_resetter"]
   s.authors     = ["Eli Fatsi"]
   s.email       = ["efatsi@comcast.net"]
   s.homepage    = "http://efatsi.github.com"
