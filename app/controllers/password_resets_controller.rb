@@ -26,6 +26,7 @@ class PasswordResetsController < ApplicationController
     @password_reset = PasswordReset.find(params[:id])
     if @password_reset.update_user_password(params[:password_reset][:password], params[:password_reset][:password_confirmation])
       session[:user_id] = @password_reset.user.id
+      @password_reset.destroy
       redirect_to root_url, :notice => "Password has been reset, hurray!"
     else
       render :edit
