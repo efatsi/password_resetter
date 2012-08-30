@@ -1,0 +1,11 @@
+== 1.0.2
+
+* removed executables all together
+
+== 1.0.1
+
+* attempt at incorporating executables
+
+== 1.0.0
+
+* password_resetter has basic functionality
