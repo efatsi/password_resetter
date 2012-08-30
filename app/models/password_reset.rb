@@ -40,8 +40,9 @@ class PasswordReset < ActiveRecord::Base
   private
   def generate_token
     begin
-      self.update_attributes(:reset_token => SecureRandom.urlsafe_base64)
-    end # while PasswordReset.exists?(:reset_token => self.reset_token)
+      self.reset_token = SecureRandom.urlsafe_base64
+    end  while PasswordReset.exists?(:reset_token => self.reset_token)
+    self.save
   end
   
   def passwords_valid?(password, confirmation)
