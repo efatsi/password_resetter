@@ -6,6 +6,7 @@ PasswordResetter is a simple gem used to give Users the ability to reset their p
 
 * There exists a User model with an `:email` attribute.
 * The application stores a logged in User with `session[:user_id]`
+* You already have the [BCrypt gem](https://github.com/codahale/bcrypt-ruby)
 
 ## Getting Started
 
