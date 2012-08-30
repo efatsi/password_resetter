@@ -71,7 +71,7 @@ describe PasswordReset do
   
   describe "#update_user_password" do
     let(:user)  { FactoryGirl.create(:user, :username => 'eli', :email => 'eli@viget.com') }
-    subject      { described_class.create(:user => user) }
+    subject     { described_class.create(:user => user) }
     
     context "when passwords are blank" do
 
@@ -118,6 +118,23 @@ describe PasswordReset do
       subject.update_attributes(:reset_sent_at => 2.hours.ago + 1.minute)
       subject.expired?.should be(false)      
     end
+  end
+  
+  describe "#delete_existing" do
+    let(:user)  { FactoryGirl.create(:user, :username => 'eli', :email => 'eli@viget.com') }
+    before do
+      @pr1 = PasswordReset.create(:user => user, :identifier => 'filler')
+    end
+    
+    it "should do nothing if another PasswordReset does not exist" do
+      expect{ @pr1.delete_existing }.to_not change{ PasswordReset.count }
+    end
+    
+    it "should delete an existing PasswordReset if one exists" do
+      @pr2 = PasswordReset.create(:user => user, :identifier => 'filler')
+      expect{ @pr2.delete_existing }.to change{ PasswordReset.count }.by(-1)
+    end
+    
   end
 
 end

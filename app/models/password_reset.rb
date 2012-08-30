@@ -4,8 +4,8 @@ class PasswordReset < ActiveRecord::Base
   
   attr_accessible :user, :identifier, :password, :password_confirmation, :reset_token, :reset_sent_at
   
-  validates_presence_of :identifier  
-  
+  validates_presence_of :identifier
+    
   def match_identifier?
     guest = User.where(['email = :identifier', :identifier => identifier]).first      
     if guest.present?
@@ -32,9 +32,14 @@ class PasswordReset < ActiveRecord::Base
     end
   end
   
-  
   def expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  def delete_existing
+    PasswordReset.all.each do |pr|
+      pr.delete if (pr.user_id == user.id) && (pr != self)
+    end
   end
   
   private
