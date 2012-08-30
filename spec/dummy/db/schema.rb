@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120829165609) do
 
   create_table "password_resets", :force => true do |t|
-    t.string   "identifier"
+    t.string   "email"
     t.string   "password"
     t.string   "password_confirmation"
     t.string   "reset_token"

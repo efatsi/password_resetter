@@ -7,7 +7,7 @@ class PasswordResetsController < ApplicationController
                                    
   def create                       
     @password_reset = PasswordReset.new(params[:password_reset])
-    if @password_reset.match_identifier? && @password_reset.save
+    if @password_reset.match_email? && @password_reset.save
       @password_reset.delete_existing
       @password_reset.send_password_reset
       redirect_to root_url, :notice => "Email sent with password reset instructions."

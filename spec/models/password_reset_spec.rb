@@ -2,39 +2,32 @@ require 'spec_helper'
 
 describe PasswordReset do
 
-  it { should validate_presence_of(:identifier) }
+  it { should validate_presence_of(:email) }
 
 
   describe "attributes" do
     it "allows mass assignment" do
-      subject = described_class.new(:identifier => 'foo')
-      subject.identifier.should == 'foo'
+      subject = described_class.new(:email => 'foo')
+      subject.email.should == 'foo'
     end
   end
 
 
-  describe "#match_identifier?" do
+  describe "#match_email?" do
     it "is nil by default" do
       subject.user.should be_nil
     end
 
-    it "returns the user with a matching username" do
-      user = FactoryGirl.create(:user, :username => 'eli')
-      subject = described_class.new(:identifier => 'eli')
-      subject.match_identifier?
-      subject.user.should == user
-    end
-
-    it "returns the user with a matching email address" do
-      user = FactoryGirl.create(:user, :email => 'eli@viget.com')
-      subject = described_class.new(:identifier => 'eli@viget.com')
-      subject.match_identifier?
+    it "returns the user with a matching email" do
+      user = FactoryGirl.create(:user, :email => 'eli@example.com')
+      subject = described_class.new(:email => 'eli@example.com')
+      subject.match_email?
       subject.user.should == user
     end
 
     it "returns false without a user match" do
-      subject = described_class.new(:identifier => 'totally_fake')
-      subject.match_identifier?.should be(false)
+      subject = described_class.new(:email => 'totally_fake')
+      subject.match_email?.should be(false)
     end
   end
 
@@ -50,7 +43,7 @@ describe PasswordReset do
       subject      { described_class.create(:user => user) }
       
       before do
-        PasswordResetMailer.stub(:password_reset).with(user).and_return(mailer)
+        PasswordResetMailer.stub(:password_reset).with(user, subject).and_return(mailer)
         mailer.stub(:deliver).and_return(true) # so the email doesn't actually get called
       end
       
@@ -123,7 +116,7 @@ describe PasswordReset do
   describe "#delete_existing" do
     let(:user)  { FactoryGirl.create(:user, :username => 'eli', :email => 'eli@viget.com') }
     before do
-      @pr1 = PasswordReset.create(:user => user, :identifier => 'filler')
+      @pr1 = PasswordReset.create(:user => user, :email => 'filler')
     end
     
     it "should do nothing if another PasswordReset does not exist" do
@@ -131,7 +124,7 @@ describe PasswordReset do
     end
     
     it "should delete an existing PasswordReset if one exists" do
-      @pr2 = PasswordReset.create(:user => user, :identifier => 'filler')
+      @pr2 = PasswordReset.create(:user => user, :email => 'filler')
       expect{ @pr2.delete_existing }.to change{ PasswordReset.count }.by(-1)
     end
     

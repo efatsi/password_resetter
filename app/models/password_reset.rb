@@ -2,12 +2,12 @@ class PasswordReset < ActiveRecord::Base
   
   belongs_to :user
   
-  attr_accessible :user, :identifier, :password, :password_confirmation, :reset_token, :reset_sent_at
+  attr_accessible :user, :email, :password, :password_confirmation, :reset_token, :reset_sent_at
   
-  validates_presence_of :identifier
+  validates_presence_of :email
     
-  def match_identifier?
-    guest = User.where(['email = :identifier', :identifier => identifier]).first      
+  def match_email?
+    guest = User.where(['email = ?', email]).first      
     if guest.present?
       self.update_attributes(:user => guest)
     else
