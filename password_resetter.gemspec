@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Eli Fatsi"]
   s.email       = ["efatsi@comcast.net"]
   s.homepage    = "http://efatsi.github.com"
-  s.summary     = "This will work one day"
+  s.summary     = "This will work one day."
   s.description = "And it will be sweet"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
