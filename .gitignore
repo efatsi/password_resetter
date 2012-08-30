@@ -1,4 +1,5 @@
 password_resetter-*.gem
+.DS_Store
 .bundle/
 log/*.log
 pkg/
