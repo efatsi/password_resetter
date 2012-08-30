@@ -9,13 +9,12 @@ PasswordResetter is a simple gem used to give Users the ability to reset their p
 
 ## Getting Started
 
-Get it. Add this to your Gemfile
+Get it.
 
 ```ruby
 gem 'password_resetter'
 ```
 
-##### Run the following terminal code in your root directory
 Install it.
 
 ```console
@@ -29,8 +28,8 @@ rake password_resetter_engine:install:migrations
 rake db:migrate
 ```
 
-If you haven't already, set your action mailer host in config/environments
-Simply place the following lines at the bottom of the necessary files given your environment
+If you haven't already, set your action mailer host in config/environments.
+Simply place the following lines at the bottom of the necessary environment files
 
 ```ruby
 # Action mailer for reset passwords
