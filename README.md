@@ -2,10 +2,10 @@
 
 PasswordResetter is a simple gem used to give Users the ability to reset their password within your Rails application.
 
-The gem assumes to following about your Rails application:
+#### The gem assumes to following about your Rails application:
 
-* There exists a User model with an `email` attribute.
-* The application knows the current_user using session[:user_id]
+* There exists a User model with an `:email` attribute.
+* The application stores a logged in User with `session[:user_id]`
 
 ## Getting Started
 
@@ -41,7 +41,7 @@ Lastly, throw the following link into the appropriate view file (i.e. views/sess
 <%= link_to "Forgot Password?", new_password_reset_path %>
 ```
 
-## Customization
+## Visual Customization
 
 To match the style of your own app, every element of the html.erb files comes tagged with a css id.
 
