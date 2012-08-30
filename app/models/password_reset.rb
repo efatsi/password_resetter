@@ -7,7 +7,7 @@ class PasswordReset < ActiveRecord::Base
   validates_presence_of :identifier  
   
   def match_identifier?
-    guest = User.where(['username = :identifier OR email = :identifier', :identifier => identifier]).first      
+    guest = User.where(['email = :identifier', :identifier => identifier]).first      
     if guest.present?
       self.update_attributes(:user => guest)
     else
