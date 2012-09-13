@@ -1,9 +1,11 @@
-<div class="password-reset-text reset"> Please enter your email address to reset your password.</div>
+<div class="password-resetting-field">
+	<div class="password-reset-text reset"> Please enter your email address to reset your password.</div>
 
-<%= simple_form_for @password_reset do |f| %>
-  <%= f.full_error :user %>
-  <div class="field">
-    <%= f.input :email, :label => "Enter your Email Address", :class => "password-reset-input email" %>
-  </div>
-  <div class="actions"><%= submit_tag "Reset Password", :class => "password-reset-button reset" %></div>
-<% end %>
+	<%= simple_form_for @password_reset do |f| %>
+	  <%= f.full_error :user %>
+	  <div class="field">
+	    <%= f.input :email, :label => "Enter your Email Address", :class => "password-reset-input email" %>
+	  </div>
+	  <div class="actions"><%= submit_tag "Reset Password", :class => "password-reset-button reset" %></div>
+	<% end %>
+</div>
