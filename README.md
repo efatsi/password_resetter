@@ -50,6 +50,11 @@ To match the style of your own app, every element of the html.erb files comes ta
 ### New Password Reset Page
 #### The page a User is directed when they click on the "Forgot Password?" link
 
+The entire form is wrapped with
+```ruby
+:class => "password-reset-request-field"
+```
+
 Email input field is tagged with 
 ```ruby
 :class => "password-reset-input email"
@@ -62,6 +67,12 @@ Reset Password button:
 
 ### Complete Password Reset Page
 #### The page a User is directed when they follow the link emailed to them after initializing the reset process
+
+
+The entire form is wrapped with
+```ruby
+:class => "password-reset-complete-field"
+```
 
 Password and Password Confirmation fields tagged respectively with:
 ```ruby
