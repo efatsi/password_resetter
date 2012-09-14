@@ -1,10 +1,10 @@
 <div class="password-reset-request-field">
-	<div class="password-reset-text reset"> Please enter your email address to reset your password.</div>
+	<div class="password-reset-text reset">Forgot Your Password?</div>
 
 	<%= simple_form_for @password_reset do |f| %>
 	  <%= f.full_error :user %>
 	  <div class="field">
-	    <%= f.input :email, :label => "Enter your Email Address", :class => "password-reset-input email" %>
+	    <%= f.input :email, :label => "Enter Your Email Address" %>
 	  </div>
 	  <div class="actions"><%= submit_tag "Reset Password", :class => "password-reset-button reset" %></div>
 	<% end %>

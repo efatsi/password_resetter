@@ -1,3 +1,9 @@
+== 1.0.7
+
+* README updated with better view customization instructions
+* View file text updated
+* Users found in rubyland instead of with SQL
+
 == 1.0.4
 
 * gemspec file updated
@@ -8,11 +14,11 @@
 
 == 1.0.2
 
-* removed executables all together
+* Removed executables all together
 
 == 1.0.1
 
-* attempt at incorporating executables
+* Attempt at incorporating executables
 
 == 1.0.0
 

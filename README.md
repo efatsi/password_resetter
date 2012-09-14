@@ -57,7 +57,7 @@ The entire form is wrapped with
 
 Email input field is tagged with 
 ```ruby
-:class => "password-reset-input email"
+:id => "password_reset_email"
 ```
 
 Reset Password button:
@@ -76,11 +76,27 @@ The entire form is wrapped with
 
 Password and Password Confirmation fields tagged respectively with:
 ```ruby
-:class => "password-reset-input password"
-:class => "password-reset-input password_confirmation"
+:id => "password_reset_password"
+:id => "password_reset_password_confirmation"
 ```
 
 Update Password button:
 ```ruby
-:class => "password-reset-buton update"
+:class => "password-reset-button update"
+```
+
+For example, in `application.css.scss`
+
+```
+#password_reset_email, #password_reset_password, #password_reset_password_confirmation {
+	margin-bottom: 15px;
+	margin-top: 5px;
+	width: 285px;
+}
+
+.password-reset-button {
+  background: image-url("my_button.png");
+  height: 25px;
+  width: 100px;
+}
 ```

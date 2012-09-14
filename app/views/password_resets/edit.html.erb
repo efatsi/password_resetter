@@ -1,8 +1,8 @@
 <div class="password-reset-complete-field">
 	<%= simple_form_for @password_reset do |f| %>
 	  <div class="field">
-	    <%= f.input :password, :class => "password-reset-input password" %>
-	    <%= f.input :password_confirmation, :class => "password-reset-input password-confirmation" %>
+	    <%= f.input :password, :label => "New Password" %>
+	    <%= f.input :password_confirmation, :label => "Password Confirmation" %>
 	  </div>
 	  <div class="actions"><%= f.submit "Update Password", :class => "password-reset-button update" %></div>
 	<% end %>
