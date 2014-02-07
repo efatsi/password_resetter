@@ -12,36 +12,33 @@ PasswordResetter is a simple gem used to give Users the ability to reset their p
 
 Get it.
 
-```ruby
-gem 'password_resetter'
-```
+    gem 'password_resetter'
 
 Install it.
 
-```console
-bundle install
-```
+    bundle install
 
 Migrate it.
 
-```console
-rake password_resetter_engine:install:migrations
-rake db:migrate
-```
+    rake password_resetter_engine:install:migrations
+    rake db:migrate
 
 If you haven't already, set your action mailer host in config/environments.
 Simply place the following lines at the bottom of the necessary environment files
 
-```ruby
-# Action mailer for reset passwords
-config.action_mailer.default_url_options = { :host => "localhost:3000" }
-```
+    # Action mailer for reset passwords
+    config.action_mailer.default_url_options = { :host => "localhost:3000" }
+
+Set up the email which users will be emailed from in an initializer
+
+    # config/initializers/password_resetter.rb
+    PasswordResetter.setup do |config|
+      config.from_email = "password.recover@example.com"
+    end
 
 Lastly, throw the following link into the appropriate view file (i.e. views/sessions/new.html.erb)
 
-```ruby
-<%= link_to "Forgot Password?", new_password_reset_path %>
-```
+    <%= link_to "Forgot Password?", new_password_reset_path %>
 
 ## Visual Customization
 
@@ -51,52 +48,45 @@ To match the style of your own app, every element of the html.erb files comes ta
 #### The page a User is directed when they click on the "Forgot Password?" link
 
 The entire form is wrapped with
-```ruby
-:class => "password-reset-request-field"
-```
 
-Email input field is tagged with 
-```ruby
-:id => "password_reset_email"
-```
+    :class => "password-reset-request-field"
+
+Email input field is tagged with
+
+    :id => "password_reset_email"
 
 Reset Password button:
-```ruby
-:class => "password-reset-button reset"
-```
+
+    :class => "password-reset-button reset"
 
 ### Complete Password Reset Page
 #### The page a User is directed when they follow the link emailed to them after initializing the reset process
 
 
 The entire form is wrapped with
-```ruby
-:class => "password-reset-complete-field"
-```
+
+    :class => "password-reset-complete-field"
 
 Password and Password Confirmation fields tagged respectively with:
-```ruby
-:id => "password_reset_password"
-:id => "password_reset_password_confirmation"
-```
+
+    :id => "password_reset_password"
+    :id => "password_reset_password_confirmation"
 
 Update Password button:
-```ruby
-:class => "password-reset-button update"
-```
+
+    :class => "password-reset-button update"
 
 For example, in `application.css.scss`
 
-```
-#password_reset_email, #password_reset_password, #password_reset_password_confirmation {
-	margin-bottom: 15px;
-	margin-top: 5px;
-	width: 285px;
-}
 
-.password-reset-button {
-  background: image-url("my_button.png");
-  height: 25px;
-  width: 100px;
-}
-```
+    #password_reset_email, #password_reset_password, #password_reset_password_confirmation {
+      margin-bottom: 15px;
+      margin-top: 5px;
+      width: 285px;
+    }
+
+    .password-reset-button {
+      background: image-url("my_button.png");
+      height: 25px;
+      width: 100px;
+    }

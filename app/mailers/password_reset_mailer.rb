@@ -1,5 +1,5 @@
 class PasswordResetMailer < ActionMailer::Base
-  default from: "haxxor_news@example.com"
+  default from: PasswordResetter.from_email
 
   def password_reset(user, password_reset)
     @user = user
