@@ -36,7 +36,7 @@ Set up the email which users will be emailed from in an initializer
       config.from_email = "password.recover@example.com"
     end
 
-Lastly, throw the following link into the appropriate view file (i.e. views/sessions/new.html.erb)
+Lastly, add the following to your routes.rb file - `resources :password_resets`, and throw the following link into the appropriate view file (i.e. views/sessions/new.html.erb)
 
     <%= link_to "Forgot Password?", new_password_reset_path %>
 
